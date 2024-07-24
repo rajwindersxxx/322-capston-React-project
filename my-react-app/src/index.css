@@ -1,0 +1,132 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+:root {
+  --color1: #021526;
+  --color2: #03346e;
+  --color3: #6eacda;
+  --color4: #e2e2b6;
+}
+body {
+  background-color: var(--color1);
+  background-image: url("https://www.transparenttextures.com/patterns/black-thread.png");
+  color: var(--color4);
+  box-sizing: border-box;
+}
+nav {
+  position: fixed;
+  height: 60px;
+  width: 100%;
+  background-color: var(--color1);
+  border-bottom: 1px dotted var(--color3);
+  padding: 0 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  justify-content: space-between;
+
+}
+nav .rightNav {
+  width: 35rem;
+  height: 60px;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  justify-content: space-around;
+}
+nav .rightNav li h1 {
+  font-size: 2em;
+}
+/* search button  */
+.searchButton {
+  align-items: center;
+  background-image: linear-gradient(144deg, #af40ff, #5b42f3 50%, #00ddeb);
+  border: 0;
+  border-radius: 8px;
+  box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+  box-sizing: border-box;
+  color: #ffffff;
+  display: flex;
+  font-family: Phantomsans, sans-serif;
+  font-size: 18px;
+  justify-content: center;
+  line-height: 1em;
+  max-width: 100%;
+  min-width: 140px;
+  padding: 3px;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.searchButton:active,
+.searchButton:hover {
+  outline: 0;
+}
+
+.searchButton span {
+  background-color: rgb(5, 6, 45);
+  padding: 7px 20px;
+  border-radius: 6px;
+  width: 100%;
+  height: 100%;
+  transition: 300ms;
+}
+
+.searchButton:hover span {
+  background: none;
+}
+
+.searchButton:active {
+  transform: scale(0.9);
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  padding: 20px;
+  text-align: center;
+}
+
+/* card style */
+.content {
+  padding: 20px;
+}
+.card {
+  width: 300px;
+  height: 200px;
+  border-radius: 13px;
+  padding: 10px;
+  background: linear-gradient(315deg, #021322, #021629);
+  /* box-shadow: -5px -5px 4px #01080f, 5px 5px 4px #03223d; */
+  border: 1px solid var(--color3);
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  gap: 20px;
+  align-items: center;
+}
+.tiles{
+  padding: 20px;
+  min-height: calc(100vh - 124px);
+  width: 100%;
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-rows: repeat(auto-fill , minmax(200px , 1fr));
+  margin-bottom: 60px;
+}
+.card .poster{
+  width: 110px;
+}
+.poster img{
+  height: 160px;
+}
+.poster-details h2 , p{
+  text-align: left;
+  margin-bottom:  10px;
+}
