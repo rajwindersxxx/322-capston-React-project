@@ -1,30 +1,33 @@
 import { v4 as uuidv4 } from "uuid";
 import Card from "./Card";
-
+import PropTypes from "prop-types";
 function Content(props) {
-    // eslint-disable-next-line react/prop-types
-    const searchData = props.data;
-    // eslint-disable-next-line react/prop-types
-    const display = props.display;
+  const { data } = props;
+  const searchData = data;
+  function handleState(value) {
+    props.handleState(value);
+  }
   return (
     <>
-      <div
-        className="main_Content"
-        style={{ display: display ? "block" : "none" }}
-      >
+      <div className="main_Content">
         <div className="tiles">
           {searchData.map((item) => {
-            return <Card key={uuidv4()} serachItem={item} />;
+            return (
+              <Card
+                key={uuidv4()}
+                serachItem={item}
+                handleState={handleState}
+              />
+            );
           })}
         </div>
-      </div>
-      <div
-        className="main_Content"
-        style={{ display: display ? "none" : "block" }}
-      >
-        <h1>display information</h1>
       </div>
     </>
   );
 }
+
+Content.propTypes = {
+  data: PropTypes.array.isRequired,
+  handleState: PropTypes.func.isRequired
+};
 export default Content;

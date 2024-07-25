@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 :root {
   --color1: #021526;
   --color2: #03346e;
@@ -86,7 +87,7 @@ nav .rightNav li h1 {
 }
 
 footer {
-  position: fixed;
+  position: relative;
   bottom: 0;
   width: 100%;
   padding: 20px;
@@ -112,13 +113,12 @@ footer {
 }
 .tiles{
   padding: 20px;
-  min-height: calc(100vh - 124px);
+  min-height: calc(100vh - 134px);
   width: 100%;
   display: grid;
   gap: 20px;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  grid-template-rows: repeat(auto-fill , minmax(200px , 1fr));
-  margin-bottom: 60px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-rows: repeat(auto-fit , minmax(200px , 1fr));
 }
 .card .poster{
   width: 110px;
@@ -129,4 +129,9 @@ footer {
 .poster-details h2 , p{
   text-align: left;
   margin-bottom:  10px;
+}
+/* view detail component setting */
+
+.viewDetails{
+  min-height: calc(100vh - 134px);
 }

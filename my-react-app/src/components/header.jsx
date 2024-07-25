@@ -1,5 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
+import PropTypes from "prop-types";
 // use to add env data to project
 const api_url = import.meta.env.VITE_API_URL;
 const api_key = import.meta.env.VITE_API_KEY;
@@ -7,17 +8,23 @@ const api_key = import.meta.env.VITE_API_KEY;
 function Header(props) {
   const [search, setSearch] = useState("");
   function handleChange() {
+    // eslint-disable-next-line no-unused-vars
     const { name, value } = event.target;
     setSearch(value);
   }
   function handleSearch() {
+    //this will retreve database from the API
     let promises = [];
-    let pages = {startPage: 1 , endPage: 2}
+    let pages = { startPage: 1, endPage: 2 };
     for (let i = pages.startPage; i <= pages.endPage; i++) {
       let promise = axios
         .get(`${api_url}/?apikey=${api_key}&s=${search}&page=${i}`)
         .then((response) => {
-          return response.data.Search;
+          if (response.data.Response) {
+            return response.data.Search;
+          } else {
+            return {message: "No Result found"};
+          }
         })
         .catch((error) => {
           console.log(error);
@@ -69,4 +76,7 @@ function Header(props) {
     </>
   );
 }
+Header.propTypes = {
+  Switch: PropTypes.func,
+};
 export default Header;
