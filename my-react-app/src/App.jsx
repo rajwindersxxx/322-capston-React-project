@@ -4,7 +4,6 @@ import Footer from "./components/footer";
 import Content from "./components/content";
 import ViewDetails from "./components/ViewDetails";
 import { useState } from "react";
-
 function App() {
   const [searchData, setSearchData] = useState([]);
   const [display, setDisplay] = useState(true);
@@ -17,7 +16,7 @@ function App() {
   }
   return (
     <>
-      <Header FetchData={search}  />
+      <Header FetchData={search}  handleState={handleState}/>
       {display ? (
         <Content data={searchData}  handleState={handleState}/>
       ) : (

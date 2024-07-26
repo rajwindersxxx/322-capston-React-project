@@ -1,30 +1,24 @@
-import { useState } from "react";
+import {  useState } from "react";
 import axios from "axios";
 import PropTypes from "prop-types";
-// use to add env data to project
 const api_url = import.meta.env.VITE_API_URL;
 const api_key = import.meta.env.VITE_API_KEY;
 
 function Header(props) {
   const [search, setSearch] = useState("");
   function handleChange() {
-    // eslint-disable-next-line no-unused-vars
-    const { name, value } = event.target;
+    const { value } = event.target;
     setSearch(value);
   }
   function handleSearch() {
-    //this will retreve database from the API
     let promises = [];
     let pages = { startPage: 1, endPage: 2 };
+    //cSpell: disable
     for (let i = pages.startPage; i <= pages.endPage; i++) {
       let promise = axios
         .get(`${api_url}/?apikey=${api_key}&s=${search}&page=${i}`)
         .then((response) => {
-          if (response.data.Response) {
             return response.data.Search;
-          } else {
-            return {message: "No Result found"};
-          }
         })
         .catch((error) => {
           console.log(error);
@@ -34,19 +28,23 @@ function Header(props) {
     }
     Promise.all(promises)
       .then((results) => {
-        // eslint-disable-next-line react/prop-types
         props.FetchData([].concat(...results));
+        props.handleState(true);
       })
       .catch((error) => {
         console.log("Error fetching data:", error);
       });
   }
+  function ViewHomePage() {
+    props.handleState(true);
+  }
+  
   return (
     <>
       <nav>
         <ul className="rightNav">
           <li>
-            <h1 className="font-serif">
+            <h1 className="font-serif cursor-pointer" onClick={ViewHomePage}>
               Movie<span className="text-4xl">/</span>Database
             </h1>
           </li>
@@ -68,7 +66,7 @@ function Header(props) {
         </ul>
         <ul>
           <li style={{ float: "right" }}>
-            <button>Login</button>
+            {/* <button>Login</button> */}
           </li>
         </ul>
       </nav>
@@ -78,5 +76,7 @@ function Header(props) {
 }
 Header.propTypes = {
   Switch: PropTypes.func,
+  handleState: PropTypes.func,
+  FetchData: PropTypes.func,
 };
 export default Header;

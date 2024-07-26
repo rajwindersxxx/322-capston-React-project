@@ -25,7 +25,6 @@ nav {
   grid-template-columns: 1fr 1fr;
   align-items: center;
   justify-content: space-between;
-
 }
 nav .rightNav {
   width: 35rem;
@@ -110,28 +109,83 @@ footer {
   grid-template-columns: 110px 1fr;
   gap: 20px;
   align-items: center;
+  margin: auto;
 }
-.tiles{
+.tiles {
   padding: 20px;
   min-height: calc(100vh - 134px);
   width: 100%;
   display: grid;
   gap: 20px;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  grid-template-rows: repeat(auto-fit , minmax(200px , 1fr));
+  grid-template-rows: repeat(auto-fit, minmax(200px, 1fr));
 }
-.card .poster{
+.card .poster {
   width: 110px;
 }
-.poster img{
+.poster img {
   height: 160px;
 }
-.poster-details h2 , p{
+.poster-details h2,
+p {
   text-align: left;
-  margin-bottom:  10px;
+  margin-bottom: 10px;
 }
 /* view detail component setting */
 
-.viewDetails{
+.viewDetails {
+  position: relative;
+  padding: 20px;
+  margin: auto;
+  max-width: 70%;
   min-height: calc(100vh - 134px);
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  grid-template-rows: auto 1fr;
+}
+.viewDetails .image {
+  width: 300px;
+  height: 400px;
+}
+.viewDetails h1 {
+  color: var(--color4);
+  font-style: bold;
+}
+.information > p {
+  margin: 22px 0 ;
+}
+#root > div.viewDetails > div.information > p.text-xl.capitalize.mt-2 {
+  color: var(--color3);
+}
+/* Loading icon  */
+/* HTML:  */
+.loader {
+  width: 50px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: 
+    radial-gradient(farthest-side,var(--color3) 94%,#0000) top/8px 8px no-repeat,
+    conic-gradient(#0000 30%,var(--color3));
+  -webkit-mask: radial-gradient(farthest-side,#0000 calc(100% - 8px),#000 0);
+  animation: l13 1s infinite linear;
+}
+@keyframes l13{ 
+  100%{transform: rotate(1turn)}
+}
+.loading-icon{
+  min-height: calc(100vh - 134px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.backButton{
+  position: absolute;
+  right: 0;
+  bottom:  0;
+  background-color: var(--color1);
+  border: 1px solid var(--color4);
+  color: var(--color4)
+}
+.backButton div{
+  background-color: var(--color3);
 }

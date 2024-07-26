@@ -1,14 +1,15 @@
 import PropTypes from "prop-types";
-import ViewDetails from "./ViewDetails";
+let id = 0;
 function Card(props) {
-  const item = props.serachItem;
-  return (
+  const item = props.searchItem;
+  if(item){
+    return (
     <>
       <button
         className="card"
         onClick={() => {
-          ViewDetails(item.imdbID);
-          props.handleState(true);
+          props.handleState(false);
+          id = item.imdbID;
         }}
       >
         <div className="poster">
@@ -23,10 +24,11 @@ function Card(props) {
     </>
   );
 }
+}
 Card.propTypes = {
-  serachItem: PropTypes.object.isRequired,
-  ViewDetails: PropTypes.func,
+  searchItem: PropTypes.object.isRequired,
   Switch: PropTypes.func,
   handleState: PropTypes.func.isRequired
 };
 export default Card;
+export {id as id };

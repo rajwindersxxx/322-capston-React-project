@@ -1,29 +1,22 @@
 {
-    "Title": "Naruto",
-    "Year": "2002–2007",
-    "Rated": "TV-PG",
-    "Released": "10 Sep 2005",
-    "Runtime": "24 min",
-    "Genre": "Animation, Action, Adventure",
-    "Director": "N/A",
-    "Writer": "Masashi Kishimoto",
-    "Actors": "Junko Takeuchi, Maile Flanagan, Kate Higgins",
-    "Plot": "Naruto Uzumaki, a mischievous adolescent ninja, struggles as he searches for recognition and dreams of becoming the Hokage, the village's leader and strongest ninja.",
-    "Language": "Japanese",
-    "Country": "Japan",
-    "Awards": "N/A",
-    "Poster": "https://m.media-amazon.com/images/M/MV5BZmQ5NGFiNWEtMmMyMC00MDdiLTg4YjktOGY5Yzc2MDUxMTE1XkEyXkFqcGdeQXVyNTA4NzY1MzY@._V1_SX300.jpg",
+    "Rated": "Not Rated",
+    "Runtime": "95 min",
+    "Actors": "Junko Takeuchi, Chie Nakamura, Satoshi Hino",
+    "Awards": "1 win & 6 nominations",
+    "Poster": "https://m.media-amazon.com/images/M/MV5BOTllNzNlYjEtNGQ2OS00ZWE3LWFhNjctNmQyMzkzYWZjNWI4XkEyXkFqcGdeQXVyMjc2Nzg5OTQ@._V1_SX300.jpg",
     "Ratings": [
         {
             "Source": "Internet Movie Database",
-            "Value": "8.4/10"
+            "Value": "7.0/10"
         }
     ],
     "Metascore": "N/A",
-    "imdbRating": "8.4",
-    "imdbVotes": "130,356",
-    "imdbID": "tt0409591",
-    "Type": "series",
-    "totalSeasons": "1",
+    "imdbVotes": "4,426",
+    "imdbID": "tt1481363",
+    "Type": "movie",
+    "DVD": "N/A",
+    "BoxOffice": "N/A",
+    "Production": "N/A",
+    "Website": "N/A",
     "Response": "True"
 }
